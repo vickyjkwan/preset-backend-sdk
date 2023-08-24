@@ -50,7 +50,7 @@ class UsernamePasswordAuth(Auth):  # pylint: disable=too-few-public-methods
             self.session.headers["CF-Access-Client-Secret"] = self.cf_client_secret
 
         # set cookies
-        self.session.post(self.baseurl / "login/", data=data)
+        self.session.post(self.baseurl / "login/", json=data)
 
 
 class SupersetJWTAuth(TokenAuth):  # pylint: disable=abstract-method
